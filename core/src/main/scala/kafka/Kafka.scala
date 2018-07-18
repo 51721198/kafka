@@ -23,6 +23,7 @@ import joptsimple.OptionParser
 import kafka.server.{KafkaServer, KafkaServerStartable}
 import kafka.utils.{CommandLineUtils, Exit, Logging}
 import org.apache.kafka.common.utils.Utils
+import org.apache.log4j.PropertyConfigurator
 
 import scala.collection.JavaConverters._
 
@@ -55,6 +56,7 @@ object Kafka extends Logging {
   def main(args: Array[String]): Unit = {
     try {
       val serverProps = getPropsFromArgs(args)
+      PropertyConfigurator.configure("F:\\gitrepository\\kafka\\core\\src\\main\\scala\\log4j.properties")
       val kafkaServerStartable = KafkaServerStartable.fromProps(serverProps)
 
       // attach shutdown handler to catch control-c
