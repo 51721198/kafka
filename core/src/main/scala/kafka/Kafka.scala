@@ -56,7 +56,7 @@ object Kafka extends Logging {
   def main(args: Array[String]): Unit = {
     try {
       val serverProps = getPropsFromArgs(args)
-      PropertyConfigurator.configure("F:\\gitrepository\\kafka\\core\\src\\main\\scala\\log4j.properties")
+      PropertyConfigurator.configure("/Users/liudun/githubrepo/kafka/core/src/main/scala/log4j.properties")
       val kafkaServerStartable = KafkaServerStartable.fromProps(serverProps)
 
       // attach shutdown handler to catch control-c
